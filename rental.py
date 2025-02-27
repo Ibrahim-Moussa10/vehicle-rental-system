@@ -16,7 +16,7 @@ class Vehicle:
         print(f"Engine capacity: {self.engine_capacity}")
 
     def rental_cost(self, days):
-        return self.rental_price_per_day * days
+        return self.get_rental_price() * days
     
     def get_rental_price(self):
         return self.__rental_price_per_day
@@ -45,8 +45,12 @@ class Bike(Vehicle):
         super().display_info()
         print(f"Bike type: {self.bike_type}")
 
+
 car = Car("Honda", "Civic", 2022, 60, 5, 2, "Sedan")
 bike = Bike("Yamaha", "YZF-R3", 2021, 30, 2, 1, "Sport")
+
+car_rental_cost = car.rental_cost(3)
+bike_rental_cost = bike.rental_cost(3)
 
 print("================================================")
 print("Car Details:")
@@ -54,4 +58,7 @@ car.display_info()
 print("================================================")
 print("Bike Details:")
 bike.display_info()
+print("================================================")
+print(f"Car rental cost for 5 days: ${car_rental_cost}")
+print(f"Bike rental cost for 5 days: ${bike_rental_cost}")
 print("================================================")
