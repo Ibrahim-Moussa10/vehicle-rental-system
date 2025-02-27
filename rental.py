@@ -21,10 +21,18 @@ class Vehicle:
     def get_rental_price(self):
         return self.__rental_price_per_day
     
-    def get_rental_price(self)
-        return self.__rental_price_per_day
     def set_rental_price(self, price):
         if price > 0:
             self.__rental_price_per_day = price
         else:
             print("Invalid price")
+
+class Car(Vehicle):
+    
+    def __init__(self, brand, module, year, rental_price_per_day, seating_capacity, engine_capacity, transmission):
+        super().__init__(brand, module, year, rental_price_per_day, seating_capacity, engine_capacity)
+        self.transmission = transmission
+    
+    def display_info(self):
+        super().display_info()
+        print(f"Transmission: {self.transmission}")
