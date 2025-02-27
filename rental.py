@@ -44,3 +44,14 @@ class Bike(Vehicle):
     def display_info(self):
         super().display_info()
         print(f"Bike type: {self.bike_type}")
+
+car = Car("Honda", "Civic", 2022, 60, 5, 2, "Sedan")
+bike = Bike("Yamaha", "YZF-R3", 2021, 30, 2, 1, "Sport")
+
+print("================================================")
+print("Car Details:")
+car.display_info()
+print("================================================")
+print("Bike Details:")
+bike.display_info()
+print("================================================")
