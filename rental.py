@@ -29,25 +29,23 @@ class Vehicle:
 
 class Car(Vehicle):
 
-    def __init__(self, brand, module, year, rental_price_per_day, seating_capacity, engine_capacity, transmission):
+    def __init__(self, brand, module, year, rental_price_per_day, seating_capacity, engine_capacity):
         super().__init__(brand, module, year, rental_price_per_day, seating_capacity, engine_capacity)
-        self.transmission = transmission
     
     def display_info(self):
         super().display_info()
-        print(f"Transmission: {self.transmission}")
+ 
+
 class Bike(Vehicle):
-    def __init__(self, brand, module, year, rental_price_per_day, seating_capacity, engine_capacity, bike_type):
+    def __init__(self, brand, module, year, rental_price_per_day, seating_capacity, engine_capacity):
         super().__init__(brand, module, year, rental_price_per_day, seating_capacity, engine_capacity)
-        self.bike_type = bike_type
     
     def display_info(self):
         super().display_info()
-        print(f"Bike type: {self.bike_type}")
 
 
-car = Car("Honda", "Civic", 2022, 60, 5, 2, "Sedan")
-bike = Bike("Yamaha", "YZF-R3", 2021, 30, 2, 1, "Sport")
+car = Car("Toyota", "Corolla", 2020, 50, 5, 2)
+bike = Bike("Yamaha", "YZF-R3", 2021, 30, 2, 1)
 
 car_rental_cost = car.rental_cost(3)
 bike_rental_cost = bike.rental_cost(3)
@@ -61,4 +59,15 @@ bike.display_info()
 print("================================================")
 print(f"Car rental cost for 5 days: ${car_rental_cost}")
 print(f"Bike rental cost for 5 days: ${bike_rental_cost}")
+print("================================================")
+
+car.set_rental_price(60)
+bike.set_rental_price(25)
+
+print("================================================")
+print("Updated Rental Price:")
+updated_car_rental_cost = car.rental_cost(3)
+updated_bike_rental_cost = bike.rental_cost(3)
+print(f"Updated Car rental cost for 3 days: ${updated_car_rental_cost}")
+print(f"Updated Bike rental cost for 3 days: ${updated_bike_rental_cost}")
 print("================================================")
