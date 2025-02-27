@@ -45,10 +45,10 @@ class Bike(Vehicle):
 
 
 car = Car("Toyota", "Corolla", 2020, 50, 5, 2)
-bike = Bike("Yamaha", "YZF-R3", 2021, 30, 2, 1)
+bike = Bike("Yamaha", "R1", 2019, 30, 2, "998cc")
 
 car_rental_cost = car.rental_cost(3)
-bike_rental_cost = bike.rental_cost(3)
+bike_rental_cost = bike.rental_cost(5)
 
 print("================================================")
 print("Car Details:")
@@ -57,17 +57,14 @@ print("================================================")
 print("Bike Details:")
 bike.display_info()
 print("================================================")
-print(f"Car rental cost for 5 days: ${car_rental_cost}")
+print(f"Car rental cost for 3 days: ${car_rental_cost}")
 print(f"Bike rental cost for 5 days: ${bike_rental_cost}")
 print("================================================")
 
-car.set_rental_price(60)
-bike.set_rental_price(25)
+car.set_rental_price(55)
 
 print("================================================")
 print("Updated Rental Price:")
 updated_car_rental_cost = car.rental_cost(3)
-updated_bike_rental_cost = bike.rental_cost(3)
 print(f"Updated Car rental cost for 3 days: ${updated_car_rental_cost}")
-print(f"Updated Bike rental cost for 3 days: ${updated_bike_rental_cost}")
 print("================================================")
