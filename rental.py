@@ -28,7 +28,7 @@ class Vehicle:
             print("Invalid price")
 
 class Car(Vehicle):
-    
+
     def __init__(self, brand, module, year, rental_price_per_day, seating_capacity, engine_capacity, transmission):
         super().__init__(brand, module, year, rental_price_per_day, seating_capacity, engine_capacity)
         self.transmission = transmission
@@ -36,3 +36,11 @@ class Car(Vehicle):
     def display_info(self):
         super().display_info()
         print(f"Transmission: {self.transmission}")
+class Bike(Vehicle):
+    def __init__(self, brand, module, year, rental_price_per_day, seating_capacity, engine_capacity, bike_type):
+        super().__init__(brand, module, year, rental_price_per_day, seating_capacity, engine_capacity)
+        self.bike_type = bike_type
+    
+    def display_info(self):
+        super().display_info()
+        print(f"Bike type: {self.bike_type}")
